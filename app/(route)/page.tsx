@@ -1,7 +1,3 @@
-import Image from "next/image";
-import type { InferGetStaticPropsType, GetStaticProps } from "next";
-import StockRankCard from "../_components/StockRankCard";
-import Link from "next/link";
 import StockRankList from "../_components/StockRankList";
 
 async function getData() {

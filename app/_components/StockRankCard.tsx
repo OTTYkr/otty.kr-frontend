@@ -1,6 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-
-import "./index.css";
 import Image from "next/image";
 
 type DBType = {
@@ -67,29 +65,26 @@ const StockRankCard = (props: any) => {
   const { id, name, code, market_cap, price, day_change, country } = props.data;
 
   return (
-    <div className="Card">
-      <div className="Rank">{props.rank}</div>
-      <div className="Company">
+    <div className="flex flex-row items-center w-full p-3">
+      <div className="w-1/12 text-center">{props.rank}</div>
+      <div className="flex flex-row flex-1">
         <img
-          className="Logo"
           src={"https://otty.kr/api/com_logo/" + code + ".webp"}
           alt={code}
         />
-        <div style={{ flex: 1 }}>
-          <div style={{ fontSize: "0.95rem", fontWeight: "bold" }}>{name}</div>
-          <div style={{ fontSize: "0.7rem", paddingTop: 6 }}>({code})</div>
+        <div className="flex flex-col justify-center pl-2 text-left">
+          <div>{name}</div>
+          <div>({code})</div>
         </div>
       </div>
-      <div className="MarketCap">
+      <div className="w-1/3 text-right">
         <div className="text-sm md:text-base xs:text-xs">
           {numberToKorean(market_cap * props.dollar)}원
         </div>
-        <div style={{ fontSize: "0.7rem" }}>
-          (현재가 {((price * props.dollar) | 0).toLocaleString()}원)
-        </div>
+        <div>(현재가 {((price * props.dollar) | 0).toLocaleString()}원)</div>
       </div>
       <div
-        className="DayChange"
+        className="w-1/6 text-right "
         style={{
           color: day_change.indexOf("⬆︎") !== -1 ? "green" : "red",
           fontSize: "0.8rem",
@@ -97,7 +92,7 @@ const StockRankCard = (props: any) => {
       >
         {day_change}
       </div>
-      <div className="Country" style={{ fontSize: "0.8rem" }}>
+      <div className="flex justify-center w-1/12">
         <img
           className="CountryLogo"
           src={getCountryLogo(country)}

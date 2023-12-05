@@ -10,12 +10,14 @@ const StockRankList = (props: any) => {
     setShowMore(ShowMore + 1);
   };
   return (
-    <div className="px-2 sm:px-4 md:px-6 lg:px-8 w-full max-w-5xl flex flex-col items-center">
-      {data.slice(0, 10 * ShowMore).map((d: any, idx: any) => (
-        <StockRankCard key={d.id} data={d} rank={idx + 1} dollar={d.dollar} />
-      ))}
+    <div className="flex flex-col items-center w-full max-w-5xl px-2 sm:px-4 md:px-6 lg:px-8">
+      <div className="w-full divide-y">
+        {data.slice(0, 10 * ShowMore).map((d: any, idx: any) => (
+          <StockRankCard key={d.id} data={d} rank={idx + 1} dollar={d.dollar} />
+        ))}
+      </div>
       <div
-        className="text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        className="px-4 py-2 font-bold text-center text-white bg-blue-500 rounded hover:bg-blue-700"
         onClick={showMore}
         hidden={ShowMore >= 10 ? true : false}
       >
