@@ -65,7 +65,7 @@ const StockRankCard = (props: any) => {
   const { id, name, code, market_cap, price, day_change, country } = props.data;
 
   return (
-    <div className="flex flex-row items-center w-full p-3">
+    <div className="flex flex-row items-center w-full p-2 lg:p-3">
       <div className="w-1/12 text-center">{props.rank}</div>
       <div className="flex flex-row items-center flex-1">
         <img

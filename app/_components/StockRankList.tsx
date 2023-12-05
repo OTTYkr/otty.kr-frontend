@@ -10,7 +10,7 @@ const StockRankList = (props: any) => {
     setShowMore(ShowMore + 1);
   };
   return (
-    <div className="flex flex-col items-center w-full max-w-5xl px-2 sm:px-4 md:px-6 lg:px-8">
+    <div className="flex flex-col items-center w-full max-w-5xl">
       <div className="w-full divide-y">
         {data.slice(0, 10 * ShowMore).map((d: any, idx: any) => (
           <StockRankCard key={d.id} data={d} rank={idx + 1} dollar={d.dollar} />
