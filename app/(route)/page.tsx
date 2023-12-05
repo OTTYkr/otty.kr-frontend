@@ -5,24 +5,21 @@ import Link from "next/link";
 import StockRankList from "../_components/StockRankList";
 
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/stock-rank", {
-    next: { revalidate: 3600 },
-  });
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+  try {
+    const res = await fetch(process.env.API_URL + "/api/stock_rank", {
+      next: { revalidate: 3600 },
+    });
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
+    return res.json();
+  } catch (error) {
+    console.error(error);
+    return { data: null };
   }
-  console.log(res);
-
-  return res.json();
 }
 
-const Home = async ({ searchParams }: { searchParams: { len: string } }) => {
+const Home = async () => {
   let RankData = await getData();
-  const nowDate = new Date(RankData["data"][0]["date"]);
+  const nowDate = new Date(RankData[0]["date"]);
   return (
     <div className="w-full max-w-4xl">
       <div className="p-4 text-xl font-extrabold text-center">
@@ -41,7 +38,7 @@ const Home = async ({ searchParams }: { searchParams: { len: string } }) => {
           " "}{" "}
         기준
       </div>
-      <StockRankList data={RankData.data} />
+      <StockRankList data={RankData} />
     </div>
   );
 };
