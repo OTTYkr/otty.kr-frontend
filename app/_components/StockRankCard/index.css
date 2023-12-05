@@ -1,0 +1,65 @@
+.Card {
+  background-color: white;
+  color: #444444;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 16px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.Rank {
+  flex: 0.1;
+  display: flex;
+  justify-content: center;
+}
+
+.Company {
+  width: 25%;
+  min-width: 25%;
+  flex: 0.3;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  text-align: start;
+}
+
+.Logo {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 0.4rem;
+}
+
+.MarketCap {
+  flex: 0.7;
+  text-align: end;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  @media (min-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.DayChange {
+  flex: 0.3;
+  display: flex;
+  justify-content: end;
+  text-align: end;
+}
+
+.Country {
+  width: 1rem;
+  height: 1rem;
+  flex: 0.25;
+  display: flex;
+  font-size: 0.95rem;
+  justify-content: center;
+  text-align: end;
+}
+
+.CountryLogo {
+  object-fit: contain;
+}
