@@ -68,18 +68,20 @@ const StockRankCard = (props: any) => {
     <div className="flex flex-row items-center w-full p-2 lg:p-3">
       <div className="w-1/12 text-center">{props.rank}</div>
       <div className="flex flex-row items-center flex-1">
-        <img
-          className="w-8 h-8 lg:w-12 lg:h-12"
-          src={"https://otty.kr/api/com_logo/" + code + ".webp"}
-          alt={code}
-        />
+        <div className="w-8 h-8 overflow-hidden border rounded-full lg:w-12 lg:h-12">
+          <img
+            className="object-contain p-1.5 lg:p-2"
+            src={"https://otty.kr/api/com_logo/" + code + ".webp"}
+            alt={code}
+          />
+        </div>
         <div className="flex flex-col justify-center pl-2 text-left">
-          <div>{name}</div>
+          <div className="text-xs sm:text-sm md:text-base ">{name}</div>
           <div>({code})</div>
         </div>
       </div>
       <div className="w-1/3 text-right">
-        <div className="text-sm md:text-base sm:text-xs">
+        <div className="text-xs md:text-base sm:text-sm">
           {numberToKorean(market_cap * props.dollar)}원
         </div>
         <div className="text-xs ">
