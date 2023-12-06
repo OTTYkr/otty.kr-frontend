@@ -75,7 +75,7 @@ const StockRankCard = (props: any) => {
             alt={code}
           />
         </div>
-        <div className="flex flex-col justify-center pl-2 text-left">
+        <div className="flex flex-col justify-center flex-1 pl-2 text-left">
           <div className="text-xs sm:text-sm md:text-base ">{name}</div>
           <div>({code})</div>
         </div>
