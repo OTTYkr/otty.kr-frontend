@@ -1,3 +1,5 @@
+import NewsList from "@/app/_components/NewsList";
+
 async function getData() {
   try {
     const res = await fetch(process.env.API_URL + "/api/investing", {});
@@ -14,7 +16,7 @@ const News = async () => {
   return (
     <div className="w-full max-w-4xl">
       <div className="p-4 text-2xl font-bold">인기 뉴스</div>
-      {NewsData[0]["content"]}
+      <NewsList data={NewsData} />
     </div>
   );
 };
