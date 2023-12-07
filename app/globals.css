@@ -30,16 +30,7 @@ a {
   margin-right: auto;
 }
 
-/* 가변 폰트 크기 설정
-:root {
-  font-size: 12px;
-  @media (min-width: 800px) {
-    font-size: 14px;
-  }
-  @media (min-width: 1200px) {
-    font-size: 16px;
-  }
-} */
+// 가변 폰트 크기 설정
 
 :root {
   background-color: #f2f2f2;

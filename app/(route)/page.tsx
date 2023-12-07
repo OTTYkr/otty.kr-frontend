@@ -19,18 +19,18 @@ const Home = async () => {
   return (
     <div className="w-full max-w-4xl">
       <div className="p-4 text-xl font-extrabold text-center">
-        세계 시가총액 순위
+        실시간 세계 시가총액 순위
       </div>
-      <div className="px-2 sm:px-4 md:px-6 lg:px-8 text-xs sm:text-sm text-right w-full max-w-4xl justify-end">
+      <div className="justify-end w-full max-w-4xl px-2 text-xs text-right sm:px-4 md:px-6 lg:px-8 sm:text-sm">
         {nowDate.getFullYear() +
           "." +
-          String(nowDate.getUTCMonth() + 1).padStart(2, "0") +
+          String(nowDate.getMonth() + 1).padStart(2, "0") +
           "." +
-          String(nowDate.getUTCDate()).padStart(2, "0") +
+          String(nowDate.getDate()).padStart(2, "0") +
           " " +
-          String(nowDate.getUTCHours()).padStart(2, "0") +
+          String(nowDate.getHours()).padStart(2, "0") +
           ":" +
-          String(nowDate.getUTCMinutes()).padStart(2, "0") +
+          String(nowDate.getMinutes()).padStart(2, "0") +
           " "}{" "}
         기준
       </div>

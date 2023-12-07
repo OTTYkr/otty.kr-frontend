@@ -36,7 +36,7 @@ export default function RootLayout({
       </head>
       <body>
         <Header />
-        <main className="page-container flex flex-col bg-white">
+        <main className="flex flex-col bg-white page-container">
           {children}
         </main>
         <Footer />
