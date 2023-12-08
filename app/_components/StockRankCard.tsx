@@ -108,7 +108,7 @@ const StockRankCard = (props: any) => {
       </div>
       <div className="flex justify-center w-1/12">
         <img
-          className="CountryLogo"
+          className="w-5 CountryLogo"
           src={getCountryLogo(country)}
           alt={country}
         />
