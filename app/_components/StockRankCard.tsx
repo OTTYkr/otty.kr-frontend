@@ -102,7 +102,7 @@ const StockRankCard = (props: any) => {
         {day_change.indexOf("⬆︎") >= 0 ? (
           <img src="./up.svg" alt="up" className="w-4 pr-1" />
         ) : (
-          <img src="./down.svg" alt="down" className="w-4 pr-1" />
+          <img src="./down.svg" alt="down" className="w-4 pl-1 rotate-180" />
         )}
         {day_change.split(" ")[1]}
       </div>
