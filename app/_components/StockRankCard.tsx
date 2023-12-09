@@ -93,7 +93,7 @@ const StockRankCard = (props: any) => {
         </div>
       </div>
       <div
-        className="flex flex-row items-center justify-end w-1/6"
+        className="flex flex-row items-center justify-center w-1/6"
         style={{
           color: day_change.indexOf("⬆︎") >= 0 ? "#00C29B" : "#FA4C67",
           fontSize: "0.8rem",

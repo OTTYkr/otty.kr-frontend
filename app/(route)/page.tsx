@@ -34,6 +34,13 @@ const Home = async () => {
           " "}{" "}
         기준
       </div>
+      <div className="flex flex-row w-full p-2 lg:p-3 bg-slate-200">
+        <div className="w-1/12 text-center">랭킹</div>
+        <div className="flex-1 text-left ">기업명</div>
+        <div className="w-1/3 text-right">시가총액</div>
+        <div className="w-1/6 text-center">변동</div>
+        <div className="w-1/12 text-center">국가</div>
+      </div>
       <StockRankList data={RankData} />
     </div>
   );
