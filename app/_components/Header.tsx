@@ -76,26 +76,27 @@ const Header = () => {
           (isOpen ? "h-[120px]" : "h-0")
         }
       >
-        {isOpen ? (
-          <div className="w-full">
-            <Link
-              href="/global"
-              onClick={() => (isOpen ? setisOpen(false) : "")}
-              className="block px-10 py-5 text-sm hover:bg-gray-200"
-            >
-              시가총액 순위
-            </Link>
-            <Link
-              href="/news"
-              onClick={() => (isOpen ? setisOpen(false) : "")}
-              className="block px-10 py-5 text-sm hover:bg-gray-200"
-            >
-              인기 뉴스
-            </Link>
-          </div>
-        ) : (
-          <></>
-        )}
+        <div
+          className={
+            "w-full transition-all duration-300 ease-out" +
+            (isOpen ? " opacity-100" : " opacity-0")
+          }
+        >
+          <Link
+            href="/global"
+            onClick={() => (isOpen ? setisOpen(false) : "")}
+            className="block px-10 py-5 text-sm hover:bg-gray-200"
+          >
+            시가총액 순위
+          </Link>
+          <Link
+            href="/news"
+            onClick={() => (isOpen ? setisOpen(false) : "")}
+            className="block px-10 py-5 text-sm hover:bg-gray-200"
+          >
+            인기 뉴스
+          </Link>
+        </div>
       </div>
     </nav>
   );
