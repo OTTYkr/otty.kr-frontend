@@ -18,6 +18,10 @@ const Home = async () => {
   const nowDate = new Date(RankData[0]["date"]);
   return (
     <div className="w-full max-w-4xl">
+      <div>
+        <div>OTTY, </div>
+        <div>Own The Trading Yields.</div>
+      </div>
       <div className="p-4 text-xl font-extrabold text-center">
         실시간 세계 시가총액 순위
       </div>
