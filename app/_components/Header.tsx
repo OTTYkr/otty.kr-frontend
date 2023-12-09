@@ -38,7 +38,11 @@ const Header = () => {
       }
     >
       <div className="mx-auto flex h-full max-w-[1000px] items-center justify-between gap-5 xs:gap-2 py-2.5">
-        <Link href="/" className="flex px-4">
+        <Link
+          href="/"
+          className="flex px-4"
+          onClick={() => (isOpen ? setisOpen(false) : "")}
+        >
           <Image className="w-8 h-8" src={logo} alt="로고" priority />
           <div className="flex items-center justify-center pl-0.5 text-base sm:text-lg">
             otty
@@ -75,13 +79,15 @@ const Header = () => {
         {isOpen ? (
           <div className="w-full">
             <Link
-              href="#"
+              href="/global"
+              onClick={() => (isOpen ? setisOpen(false) : "")}
               className="block px-10 py-5 text-sm hover:bg-gray-200"
             >
               시가총액 순위
             </Link>
             <Link
-              href="#"
+              href="/news"
+              onClick={() => (isOpen ? setisOpen(false) : "")}
               className="block px-10 py-5 text-sm hover:bg-gray-200"
             >
               인기 뉴스
