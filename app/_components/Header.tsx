@@ -78,7 +78,7 @@ const Header = () => {
       >
         <div
           className={
-            "w-full transition-all duration-300 ease-out" +
+            "w-full transition-all duration-300 ease-out " +
             (isOpen ? " opacity-100" : " opacity-0")
           }
         >
