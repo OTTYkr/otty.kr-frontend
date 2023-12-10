@@ -1,6 +1,7 @@
 import Link from "next/link";
 import StockRankList from "../_components/StockRankList";
 import Image from "next/image";
+import logo from "../../public/logo.png";
 
 type DBType = {
   [key: string]: string;
@@ -83,9 +84,14 @@ const Home = async () => {
 
   return (
     <div className="w-full">
-      <div className="pt-[100px] pb-[128px] text-center text-white bg-gradient-to-t from-indigo-500">
+      <div className="relative pt-[100px] pb-[128px] text-center text-white bg-gradient-to-t from-indigo-500">
         <div className="text-[40px] font-bold">OTTY, </div>
-        <div>Own The Trading Yields.</div>
+        <div className="absolute right-[50%] translate-x-[50%] z-10">
+          Own The Trading Yields.
+        </div>
+        <div className="absolute object-contain w-[200px] h-[200px] bottom-[-10px] right-[1%] md:right-[10%] lg:right-[20%] z-100">
+          <Image fill src={logo} alt="otty" />
+        </div>
       </div>
       <div className="max-w-4xl pt-10 m-auto pb-[60px]">
         <div className="text-[#3182f6] font-bold text-[28px] px-3 lg:px-0">
