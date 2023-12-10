@@ -37,7 +37,7 @@ const Header = () => {
           : "fixed flex flex-col top-0 left-0 right-0 z-50 h-[60px] w-full min-w-[360px] bg-white text-lg font-semibold text-zinc-800"
       }
     >
-      <div className="bg-white flex h-full w-auto mx-6 max-w-[1000px] items-center justify-between py-2.5 z-20">
+      <div className="bg-white flex h-full w-auto mx-6 lg:w-full lg:mx-auto max-w-[1000px] items-center justify-between py-2.5 z-20">
         <Link
           href="/"
           className="flex"
