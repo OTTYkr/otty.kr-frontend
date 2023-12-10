@@ -89,7 +89,7 @@ const Home = async () => {
         <div className="absolute right-[50%] translate-x-[50%] z-10">
           Own The Trading Yields.
         </div>
-        <div className="absolute object-contain w-[200px] h-[200px] bottom-[-10px] right-[1%] md:right-[10%] lg:right-[20%] z-100">
+        <div className="absolute object-contain w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] bottom-[-40px] right-[1%] lg:right-[20%] z-100">
           <Image fill src={logo} alt="otty" />
         </div>
       </div>
