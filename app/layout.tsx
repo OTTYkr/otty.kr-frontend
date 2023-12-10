@@ -8,7 +8,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "오티 - 오늘의 티커",
-  description: "다양한 주식 관련 정보 제공",
+  description:
+    "전 세계 시가총액 순위, 실시간 인기 뉴스 등 다양한 금융 정보를 제공합니다.",
   icons: {
     icon: "/logo.png", // favicon, /public path
   },

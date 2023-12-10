@@ -50,7 +50,7 @@ const Header = () => {
             priority
           />
           <div className="flex items-center justify-center ml-[-2px] text-base sm:text-lg pointer-events-none select-none font-bold tracking-[-0.05em] ">
-            OTTY
+            OTTY - 오늘의 티커
           </div>
         </Link>
         <div className="flex-row hidden lg:flex">
