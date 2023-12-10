@@ -264,6 +264,38 @@ const Home = async () => {
           </Link>
         </div>
       </div>
+      <div className="w-full bg-white">
+        <div className="max-w-4xl pt-10 m-auto pb-[60px]">
+          <div className="text-[#3182f6] font-bold text-[28px] px-3 lg:px-0">
+            실시간
+          </div>
+          <span className="pt-2 text-[30px] font-bold text-left px-3 lg:px-0">
+            세계 인기 뉴스
+          </span>
+          <span className="text-[12px] font-medium pl-3 tracking-tight">
+            {nowDate.getFullYear() +
+              "." +
+              String(nowDate.getMonth() + 1).padStart(2, "0") +
+              "." +
+              String(nowDate.getDate()).padStart(2, "0") +
+              " " +
+              String(nowDate.getHours()).padStart(2, "0") +
+              ":" +
+              String(nowDate.getMinutes()).padStart(2, "0") +
+              " "}{" "}
+            기준
+          </span>
+          <div className="text-[30px] text-center mt-6 mb-6">준비 중</div>
+          <div className="flex items-center justify-center w-full h-auto">
+            <Link
+              className="px-4 py-2 font-bold text-center text-white bg-indigo-400 rounded hover:bg-blue-700"
+              href="/news"
+            >
+              자세히 알아보기
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

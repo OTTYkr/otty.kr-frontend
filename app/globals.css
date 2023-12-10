@@ -27,10 +27,11 @@ a {
   align-items: center;
   margin-left: auto;
   margin-right: auto;
+  background-color: #fafafa;
 }
 
 // 가변 폰트 크기 설정
 
 :root {
-  background-color: #f2f2f2;
+  //background-color: #f2f2f2;
 }
