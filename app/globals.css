@@ -21,7 +21,7 @@ a {
 }
 
 .page-container {
-  padding-top: 64px;
+  padding-top: 60px;
   padding-bottom: 48px;
   min-width: 360px;
   min-height: calc(90vh - 64px);

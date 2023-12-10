@@ -33,11 +33,11 @@ const Header = () => {
     <nav
       className={
         scroll
-          ? "fixed flex flex-col top-0 left-0 right-0 z-50 mx-auto w-full min-w-[360px] border-b shadow-md bg-white text-lg font-semibold text-zinc-800"
-          : "fixed flex flex-col top-0 left-0 right-0 z-50 mx-auto w-full min-w-[360px] bg-white text-lg font-semibold text-zinc-800"
+          ? "fixed flex flex-col top-0 left-0 right-0 z-50 h-[60px] w-full min-w-[360px] border-b shadow-md bg-white text-lg font-semibold text-zinc-800"
+          : "fixed flex flex-col top-0 left-0 right-0 z-50 h-[60px] w-full min-w-[360px] bg-white text-lg font-semibold text-zinc-800"
       }
     >
-      <div className="bg-white mx-auto flex h-full w-full max-w-[1000px] items-center justify-between gap-5 py-2.5 z-20 pl-6">
+      <div className="bg-white flex h-full w-auto mx-6 max-w-[1000px] items-center justify-between py-2.5 z-20">
         <Link
           href="/"
           className="flex"
@@ -49,7 +49,7 @@ const Header = () => {
             alt="로고"
             priority
           />
-          <div className="flex items-center justify-center pl-0.5 text-base sm:text-lg pointer-events-none select-none ">
+          <div className="flex items-center justify-center pl-0.5 text-base sm:text-lg pointer-events-none select-none font-bold tracking-[-0.05em] ">
             OTTY
           </div>
         </Link>
@@ -68,7 +68,7 @@ const Header = () => {
           </Link>
         </div>
         <Image
-          className="w-12 h-12 pr-6 lg:hidden "
+          className="w-6 h-6 lg:hidden "
           src={isOpen ? cancel : navmenu}
           alt="menu"
           onClick={() => setisOpen(!isOpen)}
@@ -78,7 +78,7 @@ const Header = () => {
       <div
         className={
           "lg:hidden transition-all duration-200 ease-in-out absolute min-h-fit w-full z-10 bg-white " +
-          (isOpen ? "top-[100%] shadow-md" : "top-[-120%]")
+          (isOpen ? "top-[100%] shadow-md" : "top-[-200%]")
         }
       >
         <div className={"w-full transition-all duration-300 ease-out "}>
