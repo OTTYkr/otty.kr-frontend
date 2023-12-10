@@ -18,7 +18,7 @@ const Home = async () => {
   const nowDate = new Date(RankData[0]["date"]);
   return (
     <div className="w-full">
-      <div className="pt-[100px] pb-[128px] text-center text-white bg-gradient-to-r from-cyan-500 to-blue-500">
+      <div className="pt-[100px] pb-[128px] text-center text-white bg-gradient-to-t from-indigo-500">
         <div className="text-[40px] font-bold">OTTY, </div>
         <div>Own The Trading Yields.</div>
       </div>
