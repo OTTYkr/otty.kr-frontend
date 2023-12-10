@@ -110,7 +110,7 @@ const Home = async () => {
           </span>
         </div>
         <div className="grid items-center justify-center grid-cols-1 gap-3 px-3 py-6 sm:grid-cols-3">
-          <div className="relative overflow-hidden w-[95%] h-fit min-h-[140px] text-center shadow-md mx-auto border rounded-lg flex flex-col items-center">
+          <div className="bg-white relative overflow-hidden w-[95%] h-fit min-h-[140px] text-center shadow-md mx-auto border rounded-lg flex flex-col items-center">
             <div className="absolute top-0 left-0 w-6 h-6">
               <div className="absolute transform -rotate-45 bg-yellow-400 text-center text-white font-semibold py-1 left-[-35px] top-[20px] w-[140px]">
                 1
@@ -124,7 +124,9 @@ const Home = async () => {
                 alt={First.code}
               />
             </div>
-            <div className="font-bold text-[20px]">{First.name}</div>
+            <div className="font-bold text-[20px] tracking-tight">
+              {First.name}
+            </div>
             <div className="text-base text-gray-400">{First.code}</div>
             <div className="mt-2 tracking-tight">
               {numberToKorean(First.market_cap * First.dollar)}원
@@ -156,7 +158,7 @@ const Home = async () => {
               {First.day_change.split(" ")[1]}
             </div>
           </div>
-          <div className="relative overflow-hidden w-[95%] h-fit min-h-[140px] text-center shadow-md mx-auto border rounded-lg flex flex-col items-center">
+          <div className="bg-white relative overflow-hidden w-[95%] h-fit min-h-[140px] text-center shadow-md mx-auto border rounded-lg flex flex-col items-center">
             <div className="absolute top-0 left-0 w-6 h-6">
               <div className="absolute transform -rotate-45 bg-slate-300 text-center text-white font-semibold py-1 left-[-35px] top-[20px] w-[140px]">
                 2
@@ -170,7 +172,9 @@ const Home = async () => {
                 alt={Second.code}
               />
             </div>
-            <div className="font-bold text-[20px]">{Second.name}</div>
+            <div className="font-bold text-[20px] tracking-tight">
+              {Second.name}
+            </div>
             <div className="text-base text-gray-400">{Second.code}</div>
             <div className="mt-2 tracking-tight">
               {numberToKorean(Second.market_cap * Second.dollar)}원
@@ -202,7 +206,7 @@ const Home = async () => {
               {Second.day_change.split(" ")[1]}
             </div>
           </div>
-          <div className="relative overflow-hidden w-[95%] h-fit min-h-[140px] text-center shadow-md mx-auto border rounded-lg flex flex-col items-center">
+          <div className="bg-white relative overflow-hidden w-[95%] h-fit min-h-[140px] text-center shadow-md mx-auto border rounded-lg flex flex-col items-center">
             <div className="absolute top-0 left-0 w-6 h-6">
               <div className="absolute transform -rotate-45 bg-yellow-700 text-center text-white font-semibold py-1 left-[-35px] top-[20px] w-[140px]">
                 3
@@ -216,7 +220,9 @@ const Home = async () => {
                 alt={Third.code}
               />
             </div>
-            <div className="font-bold text-[20px]">{Third.name}</div>
+            <div className="font-bold text-[20px] tracking-tight">
+              {Third.name}
+            </div>
             <div className="text-base text-gray-400">{Third.code}</div>
             <div className="mt-2 tracking-tight">
               {numberToKorean(Third.market_cap * Third.dollar)}원
