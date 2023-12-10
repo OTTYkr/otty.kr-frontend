@@ -49,7 +49,7 @@ const Header = () => {
             alt="로고"
             priority
           />
-          <div className="flex items-center justify-center pl-0.5 text-base sm:text-lg pointer-events-none select-none font-bold tracking-[-0.05em] ">
+          <div className="flex items-center justify-center ml-[-2px] text-base sm:text-lg pointer-events-none select-none font-bold tracking-[-0.05em] ">
             OTTY
           </div>
         </Link>
