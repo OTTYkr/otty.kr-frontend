@@ -33,11 +33,11 @@ const Header = () => {
     <nav
       className={
         scroll
-          ? "fixed top-0 left-0 right-0 z-50 mx-auto max-h-fit w-full min-w-[360px] border-b shadow-md bg-white text-lg font-semibold text-zinc-800"
-          : "fixed top-0 left-0 right-0 z-50 mx-auto max-h-fit w-full min-w-[360px] bg-white text-lg font-semibold text-zinc-800"
+          ? "fixed flex flex-col top-0 left-0 right-0 z-50 mx-auto w-full min-w-[360px] border-b shadow-md bg-white text-lg font-semibold text-zinc-800"
+          : "fixed flex flex-col top-0 left-0 right-0 z-50 mx-auto w-full min-w-[360px] bg-white text-lg font-semibold text-zinc-800"
       }
     >
-      <div className="mx-auto flex h-full max-w-[1000px] items-center justify-between gap-5 xs:gap-2 py-2.5">
+      <div className="bg-white mx-auto flex h-full w-full max-w-[1000px] items-center justify-between gap-5 xs:gap-2 py-2.5 z-20">
         <Link
           href="/"
           className="flex px-4"
@@ -72,30 +72,26 @@ const Header = () => {
       {/* mobile menu */}
       <div
         className={
-          "lg:hidden transition-all duration-200 ease-in-out " +
-          (isOpen ? "h-[120px]" : "h-0")
+          "lg:hidden transition-all duration-200 ease-in-out absolute min-h-fit w-full z-10 bg-white " +
+          (isOpen ? "top-[100%] shadow-md" : "top-[-100%]")
         }
       >
-        {isOpen ? (
-          <div className={"w-full transition-all duration-300 ease-out "}>
-            <Link
-              href="/global"
-              onClick={() => (isOpen ? setisOpen(false) : "")}
-              className="block px-10 py-5 text-sm hover:bg-gray-200"
-            >
-              시가총액 순위
-            </Link>
-            <Link
-              href="/news"
-              onClick={() => (isOpen ? setisOpen(false) : "")}
-              className="block px-10 py-5 text-sm hover:bg-gray-200"
-            >
-              인기 뉴스
-            </Link>
-          </div>
-        ) : (
-          <></>
-        )}
+        <div className={"w-full transition-all duration-300 ease-out "}>
+          <Link
+            href="/global"
+            onClick={() => (isOpen ? setisOpen(false) : "")}
+            className="block px-10 py-5 text-sm hover:bg-gray-200"
+          >
+            시가총액 순위
+          </Link>
+          <Link
+            href="/news"
+            onClick={() => (isOpen ? setisOpen(false) : "")}
+            className="block px-10 py-5 text-sm hover:bg-gray-200"
+          >
+            인기 뉴스
+          </Link>
+        </div>
       </div>
     </nav>
   );
