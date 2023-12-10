@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
+import GoogleAnalytics from "./_components/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,6 +37,9 @@ export default function RootLayout({
         ></script>
       </head>
       <body>
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+          <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+        ) : null}
         <Header />
         <main className="flex flex-col page-container">{children}</main>
         <Footer />
