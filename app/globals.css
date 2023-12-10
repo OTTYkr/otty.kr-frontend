@@ -22,7 +22,6 @@ a {
 
 .page-container {
   padding-top: 60px;
-  padding-bottom: 48px;
   min-width: 360px;
   min-height: calc(90vh - 64px);
   align-items: center;
