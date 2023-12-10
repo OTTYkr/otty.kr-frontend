@@ -37,15 +37,20 @@ const Header = () => {
           : "fixed flex flex-col top-0 left-0 right-0 z-50 mx-auto w-full min-w-[360px] bg-white text-lg font-semibold text-zinc-800"
       }
     >
-      <div className="bg-white mx-auto flex h-full w-full max-w-[1000px] items-center justify-between gap-5 xs:gap-2 py-2.5 z-20">
+      <div className="bg-white mx-auto flex h-full w-full max-w-[1000px] items-center justify-between gap-5 py-2.5 z-20 pl-6">
         <Link
           href="/"
-          className="flex px-4"
+          className="flex"
           onClick={() => (isOpen ? setisOpen(false) : "")}
         >
-          <Image className="w-8 h-8" src={logo} alt="로고" priority />
-          <div className="flex items-center justify-center pl-0.5 text-base sm:text-lg">
-            otty
+          <Image
+            className="w-8 h-8 pointer-events-none select-none "
+            src={logo}
+            alt="로고"
+            priority
+          />
+          <div className="flex items-center justify-center pl-0.5 text-base sm:text-lg pointer-events-none select-none ">
+            OTTY
           </div>
         </Link>
         <div className="flex-row hidden lg:flex">
@@ -63,7 +68,7 @@ const Header = () => {
           </Link>
         </div>
         <Image
-          className="w-12 h-12 pr-4 lg:hidden"
+          className="w-12 h-12 pr-6 lg:hidden "
           src={isOpen ? cancel : navmenu}
           alt="menu"
           onClick={() => setisOpen(!isOpen)}
@@ -73,7 +78,7 @@ const Header = () => {
       <div
         className={
           "lg:hidden transition-all duration-200 ease-in-out absolute min-h-fit w-full z-10 bg-white " +
-          (isOpen ? "top-[100%] shadow-md" : "top-[-100%]")
+          (isOpen ? "top-[100%] shadow-md" : "top-[-120%]")
         }
       >
         <div className={"w-full transition-all duration-300 ease-out "}>

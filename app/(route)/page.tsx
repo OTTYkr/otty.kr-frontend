@@ -23,10 +23,13 @@ const Home = async () => {
         <div>Own The Trading Yields.</div>
       </div>
       <div className="max-w-4xl pt-10 m-auto">
-        <div className="p-4 text-xl font-extrabold text-center">
-          실시간 세계 시가총액 순위
+        <div className="text-[#3182f6] font-bold text-[28px] px-3 lg:px-0">
+          실시간
         </div>
-        <div className="justify-end w-full max-w-4xl px-2 text-xs text-right sm:px-4 md:px-6 lg:px-8 sm:text-sm">
+        <div className="pt-2 text-[30px] font-bold text-left px-3 lg:px-0">
+          세계 시가총액 순위
+        </div>
+        <div className="justify-end w-full max-w-4xl px-2 pt-4 text-xs text-right sm:px-4 md:px-6 lg:px-8 sm:text-sm">
           {nowDate.getFullYear() +
             "." +
             String(nowDate.getMonth() + 1).padStart(2, "0") +
