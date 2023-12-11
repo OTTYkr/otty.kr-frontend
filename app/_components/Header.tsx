@@ -7,9 +7,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Header = () => {
-  const [isOpen, setisOpen] = useState(false);
   // 스크롤이 50px 이상 내려올경우 true값을 넣어줄 useState
   const [scroll, setScroll] = useState(false);
+  const [isOpen, setisOpen] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
