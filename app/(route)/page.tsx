@@ -65,7 +65,7 @@ const numberToKorean = (number: number) => {
 
 async function getData() {
   try {
-    const res = await fetch(process.env.API_URL + "/api/stock_rank", {
+    const res = await fetch(process.env.API_URL + "/stock_rank", {
       next: { revalidate: 3600 },
     });
 
