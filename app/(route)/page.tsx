@@ -126,7 +126,12 @@ const Home = async () => {
               <Image
                 fill
                 className="p-3"
-                src={"https://otty.kr/api/com_logo/" + First.code + ".webp"}
+                src={
+                  process.env.API_IMAGE_URL +
+                  "/api/com_logo/" +
+                  First.code +
+                  ".webp"
+                }
                 alt={First.code}
               />
             </div>
@@ -174,7 +179,12 @@ const Home = async () => {
               <Image
                 fill
                 className="p-3"
-                src={"https://otty.kr/api/com_logo/" + Second.code + ".webp"}
+                src={
+                  process.env.API_IMAGE_URL +
+                  "/api/com_logo/" +
+                  Second.code +
+                  ".webp"
+                }
                 alt={Second.code}
               />
             </div>
@@ -222,7 +232,12 @@ const Home = async () => {
               <Image
                 fill
                 className="p-3"
-                src={"https://otty.kr/api/com_logo/" + Third.code + ".webp"}
+                src={
+                  process.env.API_IMAGE_URL +
+                  "/api/com_logo/" +
+                  Third.code +
+                  ".webp"
+                }
                 alt={Third.code}
               />
             </div>
