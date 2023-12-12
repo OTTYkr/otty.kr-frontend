@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import StockRankCard from "./StockRankCard";
+import axios from "axios";
 
 const StockRankList = (props: any) => {
   const data = props.data;
@@ -23,6 +24,16 @@ const StockRankList = (props: any) => {
       >
         더보기
       </div>
+      <button
+        onClick={() => {
+          axios
+            .get("/api/stock_rank")
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err));
+        }}
+      >
+        test
+      </button>
     </div>
   );
 };

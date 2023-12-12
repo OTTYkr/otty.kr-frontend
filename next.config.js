@@ -4,6 +4,14 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "https://api.otty.kr/:path*",
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {

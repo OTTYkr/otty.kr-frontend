@@ -2,7 +2,7 @@ import NewsList from "@/app/_components/NewsList";
 
 async function getData() {
   try {
-    const res = await fetch(process.env.API_URL + "/news/investing", {
+    const res = await fetch("https://api.otty.kr/news/investing", {
       next: { revalidate: 3600 },
     });
 

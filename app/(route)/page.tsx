@@ -2,6 +2,7 @@ import Link from "next/link";
 import StockRankList from "../_components/StockRankList";
 import Image from "next/image";
 import logo from "../../public/logo.png";
+import axios from "axios";
 
 type DBType = {
   [key: string]: string;
@@ -65,7 +66,7 @@ const numberToKorean = (number: number) => {
 
 async function getData() {
   try {
-    const res = await fetch(process.env.API_URL + "/stock_rank", {
+    const res = await fetch("https://api.otty.kr/stock_rank", {
       next: { revalidate: 3600 },
     });
 
@@ -126,12 +127,7 @@ const Home = async () => {
               <Image
                 fill
                 className="p-3"
-                src={
-                  process.env.API_IMAGE_URL +
-                  "/api/com_logo/" +
-                  First.code +
-                  ".webp"
-                }
+                src={"https://otty.kr/api/com_logo/" + First.code + ".webp"}
                 alt={First.code}
               />
             </div>
@@ -179,12 +175,7 @@ const Home = async () => {
               <Image
                 fill
                 className="p-3"
-                src={
-                  process.env.API_IMAGE_URL +
-                  "/api/com_logo/" +
-                  Second.code +
-                  ".webp"
-                }
+                src={"https://otty.kr/api/com_logo/" + Second.code + ".webp"}
                 alt={Second.code}
               />
             </div>
@@ -232,12 +223,7 @@ const Home = async () => {
               <Image
                 fill
                 className="p-3"
-                src={
-                  process.env.API_IMAGE_URL +
-                  "/api/com_logo/" +
-                  Third.code +
-                  ".webp"
-                }
+                src={"https://otty.kr/api/com_logo/" + Third.code + ".webp"}
                 alt={Third.code}
               />
             </div>
