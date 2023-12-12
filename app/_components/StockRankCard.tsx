@@ -71,7 +71,7 @@ const StockRankCard = (props: any) => {
         <div className="w-8 h-8 overflow-hidden border rounded-full lg:w-12 lg:h-12">
           <img
             className="object-contain p-1.5 lg:p-2"
-            src={"https://otty.kr/api/com_logo/" + code + ".webp"}
+            src={"/api/public/com_logo/" + code + ".webp"}
             alt={code}
           />
         </div>

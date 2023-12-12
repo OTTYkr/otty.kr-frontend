@@ -24,16 +24,6 @@ const StockRankList = (props: any) => {
       >
         더보기
       </div>
-      <button
-        onClick={() => {
-          axios
-            .get("/api/stock_rank")
-            .then((res) => console.log(res))
-            .catch((err) => console.log(err));
-        }}
-      >
-        test
-      </button>
     </div>
   );
 };
