@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "전 세계 시가총액 순위, 실시간 인기 뉴스 등 다양한 금융 정보를 제공합니다.",
   icons: {
-    icon: "/logo.png", // favicon, /public path
+    icon: "/logo.svg", // favicon, /public path
   },
 };
 

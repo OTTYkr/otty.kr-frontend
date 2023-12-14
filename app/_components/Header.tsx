@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import logo from "../../public/logo.png";
+import BrandLogo from "../../public/logo.svg";
 import navmenu from "../../public/navmenu.svg";
 import cancel from "../../public/cancel.svg";
 import Link from "next/link";
@@ -45,11 +46,11 @@ const Header = () => {
         >
           <Image
             className="w-8 h-8 pointer-events-none select-none "
-            src={logo}
+            src={BrandLogo}
             alt="로고"
             priority
           />
-          <div className="flex items-center justify-center ml-[-2px] text-base sm:text-lg pointer-events-none select-none font-bold tracking-[-0.05em] ">
+          <div className="flex items-center justify-center ml-1 text-base sm:text-lg pointer-events-none select-none font-bold tracking-[-0.05em] ">
             OTTY - 오늘의 티커
           </div>
         </Link>

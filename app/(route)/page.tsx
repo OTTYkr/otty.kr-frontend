@@ -85,7 +85,7 @@ const Home = async () => {
 
   return (
     <div className="w-full">
-      <div className="relative pt-[100px] pb-[128px] text-center text-white bg-gradient-to-t from-indigo-500">
+      <div className="relative pt-[100px] pb-[128px] text-center text-white bg-gradient-to-t from-[#ff8989]">
         <div className="text-[40px] font-bold">OTTY, </div>
         <div className="absolute right-[50%] translate-x-[50%] z-10">
           Own The Trading Yields.
