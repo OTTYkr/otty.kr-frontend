@@ -85,13 +85,18 @@ const Home = async () => {
 
   return (
     <div className="w-full">
-      <div className="relative pt-[100px] pb-[128px] text-center text-white bg-gradient-to-t from-[#ff8989]">
-        <div className="text-[40px] font-bold">OTTY, </div>
-        <div className="absolute right-[50%] translate-x-[50%] z-10">
-          Own The Trading Yields.
-        </div>
-        <div className="absolute object-contain w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] bottom-[-40px] right-[1%] lg:right-[20%] z-100">
-          <Image fill src={logo} alt="otty" />
+      <div className="relative pt-[64px] pb-[32px] max-h-[230px] text-start text-white bg-gradient-to-t to-indigo-100 from-indigo-400">
+        <div className="flex flex-row justify-between max-w-4xl px-3 m-auto">
+          <div className="">
+            <p>
+              <span className="text-[40px] font-bold">OTTY, </span>
+              Own The Trading Yields. <br />전 세계 시가총액 순위, 실시간 인기
+              뉴스 등 다양한 금융 정보를 제공합니다.
+            </p>
+          </div>
+          <div className=" w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] translate-y-[35%] lg:translate-y-[10%]">
+            <Image src={logo} alt="otty" />
+          </div>
         </div>
       </div>
       <div className="max-w-4xl pt-10 m-auto pb-[60px]">
