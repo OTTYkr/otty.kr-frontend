@@ -1,4 +1,8 @@
 import Link from "next/link";
+import Instagram from "../../public/instagram.svg";
+import Facebook from "../../public/facebook.svg";
+import Email from "../../public/email.svg";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -37,6 +41,29 @@ const Footer = () => {
             주식 가격 및 시가총액은 서버 상태에 따라 지연될 수 있습니다. <br />{" "}
             ⓒ {new Date().getFullYear()}. OTTY. all rights reserved.
           </p>
+          <div className="flex flex-row pt-4">
+            <Link
+              className="p-2 rounded-full bg-slate-200"
+              href="https://www.instagram.com/otty.kr"
+              target="_blank"
+            >
+              <Image
+                src={Instagram}
+                className="w-[20px] h-[20px]"
+                alt="instagram"
+              />
+            </Link>
+            <div className="p-2 ml-2 rounded-full bg-slate-200">
+              <Image
+                src={Facebook}
+                className="w-[20px] h-[20px]"
+                alt="facebook"
+              />
+            </div>
+            <div className="p-2 ml-2 rounded-full bg-slate-200">
+              <Image src={Email} className="w-[20px] h-[20px]" alt="email" />
+            </div>
+          </div>
         </div>
       </section>
     </footer>
