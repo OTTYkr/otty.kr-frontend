@@ -15,7 +15,7 @@ const Brand = () => {
           </span>
         </div>
         <div className="pt-[60px] px-4 lg:px-0">
-          <div className=" text-[24px] font-semibold">브랜드 로고</div>
+          <div className=" text-[24px] font-semibold pb-4">브랜드 로고</div>
           <div className="p-6 m-auto w-full md:w-[50%] h-fit rounded-xl shadow-2xl py-6">
             <div className="pb-4">브랜드 로고 (Light)</div>
             <Image
@@ -26,7 +26,7 @@ const Brand = () => {
           </div>
         </div>
         <div className="pt-[60px] px-4 lg:px-0">
-          <div className=" text-[24px] font-semibold">시그니처 캐릭터</div>
+          <div className=" text-[24px] font-semibold pb-4">시그니처 캐릭터</div>
           <div className="p-6 m-auto w-full md:w-[50%] h-fit rounded-xl shadow-2xl py-6">
             <div className="pb-4">시그니처 캐릭터 (Light)</div>
             <Image
@@ -38,7 +38,7 @@ const Brand = () => {
         </div>
         <div className="pt-[60px] px-4 lg:px-0">
           <div className=" text-[24px] font-semibold pb-4">브랜드 컬러</div>
-          <div className="grid w-full grid-cols-1 m-auto gap-x-3 h-fit md:grid-cols-3">
+          <div className="grid w-full grid-cols-1 m-auto gap-x-3 h-fit md:grid-cols-3 gap-y-4">
             <div className="pb-4 h-[150px] w-full rounded-xl shadow-2xl p-6 py-6 bg-[#4F46E5] text-white flex flex-col justify-between">
               <span className="text-[20px] font-bold">Dark Indigo</span>
               <span>#4F46E5</span>
