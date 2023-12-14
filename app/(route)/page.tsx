@@ -100,7 +100,7 @@ const Home = async () => {
         </div>
       </div>
       <div className="max-w-4xl pt-10 m-auto pb-[60px]">
-        <div className="text-[#3182f6] font-bold text-[28px] px-3 lg:px-0">
+        <div className="text-indigo-400 font-bold text-[28px] px-3 lg:px-0">
           실시간
         </div>
         <div>
@@ -132,7 +132,9 @@ const Home = async () => {
               <Image
                 fill
                 className="p-3"
-                src={"https://otty.kr/api/com_logo/" + First.code + ".webp"}
+                src={
+                  "https://api.otty.kr/public/com_logo/" + First.code + ".webp"
+                }
                 alt={First.code}
               />
             </div>
@@ -180,7 +182,9 @@ const Home = async () => {
               <Image
                 fill
                 className="p-3"
-                src={"https://otty.kr/api/com_logo/" + Second.code + ".webp"}
+                src={
+                  "https://api.otty.kr/public/com_logo/" + Second.code + ".webp"
+                }
                 alt={Second.code}
               />
             </div>
@@ -228,7 +232,9 @@ const Home = async () => {
               <Image
                 fill
                 className="p-3"
-                src={"https://otty.kr/api/com_logo/" + Third.code + ".webp"}
+                src={
+                  "https://api.otty.kr/public/com_logo/" + Third.code + ".webp"
+                }
                 alt={Third.code}
               />
             </div>
