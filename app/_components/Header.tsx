@@ -38,14 +38,14 @@ const Header = () => {
           : "fixed flex flex-col top-0 left-0 right-0 z-50 h-[60px] w-full min-w-[360px] bg-white text-lg font-semibold text-zinc-800"
       }
     >
-      <div className="bg-white flex h-full w-auto px-6 lg:w-full lg:mx-auto max-w-[1000px] items-center justify-between py-2.5 z-20">
+      <div className="bg-white flex h-full w-auto px-4 lg:w-full lg:mx-auto max-w-[1000px] items-center justify-between py-2.5 z-20">
         <Link
           href="/"
-          className="flex"
+          className="flex items-center"
           onClick={() => (isOpen ? setisOpen(false) : "")}
         >
           <Image
-            className="w-8 h-8 pointer-events-none select-none "
+            className="w-6 h-6 pointer-events-none select-none sm:w-7 sm:h-7 lg:w-8 lg:h-8 "
             src={BrandLogo}
             alt="로고"
             priority
