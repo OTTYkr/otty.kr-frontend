@@ -12,28 +12,48 @@ const Footer = () => {
         <div className="grid grid-flow-row pb-0 md:pb-[70px] leading-[30px] px-4 lg:px-0 grid-cols-1 md:grid-cols-4">
           <ul className="w-full md:w-[170px] pb-[40px] md:pb-0">
             <li className="pb-1.5 font-bold">서비스</li>
-            <li>공지사항</li>
-            <li>자주 묻는 질문</li>
+            <li>
+              <Link href="/notice">공지사항</Link>
+            </li>
+            <li>
+              <Link href="/faq">자주 묻는 질문</Link>
+            </li>
             <li>
               <Link href="/brand">브랜드 리소스센터</Link>
             </li>
-            <li>서버 상태</li>
+            <li>
+              <Link href="/status">서버 상태</Link>
+            </li>
           </ul>
           <ul className="w-full md:w-[170px] pb-[40px] md:pb-0">
             <li className="pb-1.5 font-bold">계정</li>
-            <li>로그인</li>
-            <li>회원가입</li>
+            <li>
+              <Link href="/login">로그인</Link>
+            </li>
+            <li>
+              <Link href="/register">회원가입</Link>
+            </li>
           </ul>
           <ul className="w-full md:w-[170px] pb-[40px] md:pb-0">
             <li className="pb-1.5 font-bold">법적 고지</li>
-            <li>서비스 이용약관</li>
-            <li>개인정보처리방침</li>
-            <li>라이선스</li>
+            <li>
+              <Link href="/terms-of-service">서비스 이용약관</Link>
+            </li>
+            <li>
+              <Link href="/privacy-policy">개인정보처리방침</Link>
+            </li>
+            <li>
+              <Link href="/license">라이선스</Link>
+            </li>
           </ul>
           <ul className="w-full md:w-[170px] flex-1 pb-[40px] md:pb-0">
             <li className="pb-1.5 font-bold">지원</li>
-            <li>고객센터</li>
-            <li>이메일</li>
+            <li>
+              <Link href="/support">고객센터</Link>
+            </li>
+            <li>
+              <Link href="/email">이메일</Link>
+            </li>
           </ul>
         </div>
         <div className="flex flex-col-reverse justify-between px-4 md:flex-row lg:px-0">
