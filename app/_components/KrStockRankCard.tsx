@@ -2,6 +2,7 @@
 import Image from "next/image";
 import DefaultImage from "../../public/logo.png";
 import { useEffect } from "react";
+import Link from "next/link";
 
 type DBType = {
   [key: string]: string;
@@ -42,9 +43,12 @@ const KrStockRankCard = (props: any) => {
     props.data;
 
   return (
-    <div className="flex flex-row items-center w-full p-2 lg:p-3">
-      <div className="w-1/12 text-center">{props.rank}</div>
-      <div className="flex flex-row items-center flex-1">
+    <Link
+      href={"/kr/" + symbol}
+      className="flex flex-row items-center w-full p-2 bg-white lg:p-3 hover:bg-indigo-100"
+    >
+      <div className="w-[3%] text-right">{props.rank}</div>
+      <div className="flex flex-row items-center w-[52%] pl-6">
         <div className="relative object-contain w-8 h-8 border rounded-full lg:w-12 lg:h-12">
           <Image
             fill
@@ -57,25 +61,27 @@ const KrStockRankCard = (props: any) => {
             alt={symbol}
           />
         </div>
-        <div className="flex flex-col justify-center flex-1 pl-2 text-left">
-          <div className="text-xs font-bold sm:text-sm md:text-base">
+        <div className="flex flex-row items-center justify-start flex-1 pl-3 text-left">
+          <div className="pr-3 text-xs font-bold sm:text-sm md:text-base">
             {name}
           </div>
-          <div className="text-xs text-gray-400 sm:text-sm md:text-base">
+          <div className="px-2 py-0.5 rounded-lg text-xs text-gray-700 sm:text-sm bg-slate-100">
             {symbol}
           </div>
         </div>
       </div>
-      <div className="w-1/3 text-right">
+      <div className="w-[20%] text-right">
         <div className="text-xs md:text-base sm:text-sm">
           {numberToKorean(market_cap)}원
         </div>
-        <div className="text-xs ">
-          (현재가 {regular_price.toLocaleString()}원)
+      </div>
+      <div className="w-[15%] text-right">
+        <div className="text-xs md:text-base sm:text-sm">
+          {regular_price.toLocaleString()}원
         </div>
       </div>
       <div
-        className="flex flex-row items-center justify-center w-1/6"
+        className="flex flex-row items-center text-right justify-end w-[10%]"
         style={{
           color:
             change_per == 0
@@ -98,7 +104,7 @@ const KrStockRankCard = (props: any) => {
           <Image
             src="./up.svg"
             alt="up"
-            className="w-4 pl-1"
+            className="w-4 pr-1"
             width={16}
             height={12}
           />
@@ -111,9 +117,10 @@ const KrStockRankCard = (props: any) => {
             height={12}
           />
         )}
-        {change_per.toFixed(2)}%
+        {change_per >= 0 ? change_per.toFixed(2) : (change_per * -1).toFixed(2)}
+        %
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -301,7 +301,7 @@ const Home = async () => {
           </Link>
         </div>
       </div>
-      <div className="w-full bg-white">
+      <div className="w-full bg-[#fafafa]">
         <div className="max-w-4xl pt-10 m-auto pb-[60px]">
           <div className="text-indigo-400 font-bold text-[28px] px-3 lg:px-0">
             실시간

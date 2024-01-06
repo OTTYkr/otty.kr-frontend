@@ -18,7 +18,7 @@ const KrStockRankList = (props: any) => {
         ))}
       </div>
       <div
-        className="px-4 py-2 font-bold text-center text-white bg-blue-500 rounded hover:bg-blue-700"
+        className="px-4 py-2 mt-4 font-bold text-center text-white bg-blue-500 rounded hover:bg-blue-700"
         onClick={showMore}
         hidden={ShowMore >= 10 ? true : false}
       >
