@@ -476,11 +476,19 @@ const Home = async () => {
                       : "#FA4C67",
                 }}
               >
-                {KrThird.change_per >= 0 ? (
+                {KrThird.change_per == 0 ? (
+                  <Image
+                    src="./hyphen.svg"
+                    alt="hyphen"
+                    className="w-4"
+                    width={111}
+                    height={111}
+                  />
+                ) : KrThird.change_per > 0 ? (
                   <Image
                     src="./up.svg"
                     alt="up"
-                    className="w-4 pr-1"
+                    className="w-4 pl-1"
                     width={16}
                     height={12}
                   />
@@ -500,7 +508,7 @@ const Home = async () => {
           <div className="flex items-center justify-center w-full h-auto">
             <Link
               className="px-4 py-2 font-bold text-center text-white bg-indigo-400 rounded hover:bg-blue-700"
-              href="/global"
+              href="/kr"
             >
               자세히 알아보기
             </Link>
