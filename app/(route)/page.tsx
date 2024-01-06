@@ -67,7 +67,7 @@ const numberToKorean = (number: number) => {
 async function getData() {
   try {
     const res = await fetch("https://api.otty.kr/stock_rank", {
-      next: { revalidate: 3600 },
+      next: { revalidate: 1800 },
     });
 
     return res.json();
@@ -77,11 +77,30 @@ async function getData() {
   }
 }
 
+const getKrData = async () => {
+  try {
+    const res = await fetch("https://api.otty.kr/kr_stocks", {
+      next: { revalidate: 1800 },
+    });
+
+    return res.json();
+  } catch (error) {
+    console.error(error);
+    return { data: null };
+  }
+};
+
 const Home = async () => {
   let RankData = await getData();
+  let KrRankData = await getKrData();
   const nowDate = new Date(RankData[0]["date"]);
 
   const [First, Second, Third] = [RankData[0], RankData[1], RankData[2]];
+  const [KrFirst, KrSecond, KrThird] = [
+    KrRankData[0],
+    KrRankData[1],
+    KrRankData[2],
+  ];
 
   return (
     <div className="w-full">
@@ -105,7 +124,7 @@ const Home = async () => {
         </div>
         <div>
           <span className="pt-2 text-[30px] font-bold text-left px-3 lg:px-0">
-            세계 시가총액 순위
+            전 세계 시가총액 순위
           </span>
           <span className="text-[12px] font-medium pl-3 tracking-tight">
             {nowDate.getFullYear() +
@@ -283,6 +302,212 @@ const Home = async () => {
         </div>
       </div>
       <div className="w-full bg-white">
+        <div className="max-w-4xl pt-10 m-auto pb-[60px]">
+          <div className="text-indigo-400 font-bold text-[28px] px-3 lg:px-0">
+            실시간
+          </div>
+          <div>
+            <span className="pt-2 text-[30px] font-bold text-left px-3 lg:px-0">
+              국내 시가총액 순위
+            </span>
+          </div>
+          <div className="grid items-center justify-center grid-cols-1 gap-3 px-3 py-6 sm:grid-cols-3">
+            <div className="bg-white relative overflow-hidden w-[95%] h-fit min-h-[140px] text-center shadow-md mx-auto border rounded-lg flex flex-col items-center">
+              <div className="absolute top-0 left-0 w-6 h-6">
+                <div className="absolute transform -rotate-45 bg-yellow-400 text-center text-white font-semibold py-1 left-[-35px] top-[20px] w-[140px]">
+                  1
+                </div>
+              </div>
+              <div className="relative object-contain w-20 h-20 mt-6 mb-4 border rounded-full">
+                <Image
+                  fill
+                  className="rounded-full"
+                  src={
+                    "https://api.otty.kr/public/kr_stocks/" +
+                    KrFirst.symbol +
+                    ".svg"
+                  }
+                  alt={KrFirst.name}
+                />
+              </div>
+              <div className="font-bold text-[20px] tracking-tight">
+                {KrFirst.name}
+              </div>
+              <div className="text-base text-gray-400">{KrFirst.symbol}</div>
+              <div className="mt-2 tracking-tight">
+                {numberToKorean(KrFirst.market_cap)}원
+              </div>
+              <div
+                className="flex flex-row mb-6 text-[14px] pt-1"
+                style={{
+                  color:
+                    KrFirst.change_per == 0
+                      ? "#acacac"
+                      : KrFirst.change_per > 0
+                      ? "#00C29B"
+                      : "#FA4C67",
+                }}
+              >
+                {KrFirst.change_per == 0 ? (
+                  <Image
+                    src="./hyphen.svg"
+                    alt="hyphen"
+                    className="w-4"
+                    width={111}
+                    height={111}
+                  />
+                ) : KrFirst.change_per > 0 ? (
+                  <Image
+                    src="./up.svg"
+                    alt="up"
+                    className="w-4 pl-1"
+                    width={16}
+                    height={12}
+                  />
+                ) : (
+                  <Image
+                    src="./down.svg"
+                    alt="down"
+                    className="w-4 pl-1 rotate-180"
+                    width={16}
+                    height={12}
+                  />
+                )}
+                {KrFirst.change_per.toFixed(2)}%
+              </div>
+            </div>
+            <div className="bg-white relative overflow-hidden w-[95%] h-fit min-h-[140px] text-center shadow-md mx-auto border rounded-lg flex flex-col items-center">
+              <div className="absolute top-0 left-0 w-6 h-6">
+                <div className="absolute transform -rotate-45 bg-slate-300 text-center text-white font-semibold py-1 left-[-35px] top-[20px] w-[140px]">
+                  2
+                </div>
+              </div>
+              <div className="relative object-contain w-20 h-20 mt-6 mb-4 border rounded-full">
+                <Image
+                  fill
+                  className="rounded-full"
+                  src={
+                    "https://api.otty.kr/public/kr_stocks/" +
+                    KrSecond.symbol +
+                    ".svg"
+                  }
+                  alt={KrSecond.name}
+                />
+              </div>
+              <div className="font-bold text-[20px] tracking-tight">
+                {KrSecond.name}
+              </div>
+              <div className="text-base text-gray-400">{KrSecond.symbol}</div>
+              <div className="mt-2 tracking-tight">
+                {numberToKorean(KrSecond.market_cap)}원
+              </div>
+              <div
+                className="flex flex-row mb-6 text-[14px] pt-1"
+                style={{
+                  color:
+                    KrSecond.change_per == 0
+                      ? "#acacac"
+                      : KrSecond.change_per > 0
+                      ? "#00C29B"
+                      : "#FA4C67",
+                }}
+              >
+                {KrSecond.change_per == 0 ? (
+                  <Image
+                    src="./hyphen.svg"
+                    alt="hyphen"
+                    className="w-4"
+                    width={111}
+                    height={111}
+                  />
+                ) : KrSecond.change_per > 0 ? (
+                  <Image
+                    src="./up.svg"
+                    alt="up"
+                    className="w-4 pl-1"
+                    width={16}
+                    height={12}
+                  />
+                ) : (
+                  <Image
+                    src="./down.svg"
+                    alt="down"
+                    className="w-4 pl-1 rotate-180"
+                    width={16}
+                    height={12}
+                  />
+                )}
+                {KrSecond.change_per.toFixed(2)}%
+              </div>
+            </div>
+            <div className="bg-white relative overflow-hidden w-[95%] h-fit min-h-[140px] text-center shadow-md mx-auto border rounded-lg flex flex-col items-center">
+              <div className="absolute top-0 left-0 w-6 h-6">
+                <div className="absolute transform -rotate-45 bg-yellow-700 text-center text-white font-semibold py-1 left-[-35px] top-[20px] w-[140px]">
+                  3
+                </div>
+              </div>
+              <div className="relative object-contain w-20 h-20 mt-6 mb-4 border rounded-full">
+                <Image
+                  fill
+                  className="rounded-full"
+                  src={
+                    "https://api.otty.kr/public/kr_stocks/" +
+                    KrThird.symbol +
+                    ".svg"
+                  }
+                  alt={KrThird.name}
+                />
+              </div>
+              <div className="font-bold text-[20px] tracking-tight">
+                {KrThird.name}
+              </div>
+              <div className="text-base text-gray-400">{KrThird.symbol}</div>
+              <div className="mt-2 tracking-tight">
+                {numberToKorean(KrThird.market_cap)}원
+              </div>
+              <div
+                className="flex flex-row mb-6 text-[14px] pt-1"
+                style={{
+                  color:
+                    KrThird.change_per == 0
+                      ? "#acacac"
+                      : KrThird.change_per > 0
+                      ? "#00C29B"
+                      : "#FA4C67",
+                }}
+              >
+                {KrThird.change_per >= 0 ? (
+                  <Image
+                    src="./up.svg"
+                    alt="up"
+                    className="w-4 pr-1"
+                    width={16}
+                    height={12}
+                  />
+                ) : (
+                  <Image
+                    src="./down.svg"
+                    alt="down"
+                    className="w-4 pl-1 rotate-180"
+                    width={16}
+                    height={12}
+                  />
+                )}
+                {KrThird.change_per.toFixed(2)}%
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center justify-center w-full h-auto">
+            <Link
+              className="px-4 py-2 font-bold text-center text-white bg-indigo-400 rounded hover:bg-blue-700"
+              href="/global"
+            >
+              자세히 알아보기
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className="w-full">
         <div className="max-w-4xl pt-10 m-auto pb-[60px]">
           <div className="text-[#3182f6] font-bold text-[28px] px-3 lg:px-0">
             실시간
