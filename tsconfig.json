@@ -27,7 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/pages/index/_document.js"
+    "app/pages/index/_document.js",
+    "app/(route)/sitemap.xml.js"
   ],
   "exclude": ["node_modules"]
 }
