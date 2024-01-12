@@ -4,7 +4,7 @@ import DefaultImage from "../../../../public/logo.png";
 async function getData(symbol: string) {
   try {
     const res = await fetch("https://api.otty.kr/kr_stock/" + symbol, {
-      next: { revalidate: 1800 },
+      next: { revalidate: 60 },
     });
 
     return res.json();
@@ -44,6 +44,7 @@ const Symbol = async ({ params }: { params: { symbol: string } }) => {
               </div>
             </div>
           </div>
+
           <div className="text-[32px] font-bold">
             {parseInt(data["info"]["현재가"]).toLocaleString()}원
           </div>

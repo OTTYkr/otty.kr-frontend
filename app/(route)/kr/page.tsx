@@ -4,7 +4,7 @@ import Image from "next/image";
 async function getData() {
   try {
     const res = await fetch("https://api.otty.kr/kr_stocks", {
-      next: { revalidate: 1800 },
+      cache: "no-cache",
     });
 
     return res.json();
